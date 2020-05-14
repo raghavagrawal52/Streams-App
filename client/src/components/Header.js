@@ -1,23 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import GoogleAuth from "./GoogleAuth";
 
-const Header = () => {
-  return (
-    <div className="ui pointing menu" style={{ marginTop: "20px" }}>
-      <Link to="/" className="item">
-        Streamer
-      </Link>
-      <div className="right menu">
-        <Link to="/" className="item">
-          All Streams
+class Header extends Component {
+  renderCreate() {
+    if (this.props.isSignedIn) {
+      return (
+        <Link to="/streams/new" className="item">
+          Create
         </Link>
-        <GoogleAuth />
+      );
+    }
+  }
+
+  render() {
+    return (
+      <div
+        className="ui pointing menu"
+        style={{ marginTop: "20px", marginBottom: "40px" }}
+      >
+        <Link to="/" className="item">
+          Streamer
+        </Link>
+        <div className="right menu">
+          {this.renderCreate()}
+          <Link to="/" className="item">
+            All Streams
+          </Link>
+          <GoogleAuth />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default Header;
-
-//115478669298-vsotu7o890m5p2qmbhuvkct3inv2ten8.apps.googleusercontent.com
+export default connect(mapStateToProps)(Header);

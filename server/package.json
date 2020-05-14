@@ -1,5 +1,5 @@
 {
-  "name": "streams",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/raghavagrawal52/Twitch-Clone.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
