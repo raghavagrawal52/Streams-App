@@ -18,7 +18,12 @@ class StreamList extends Component {
           >
             Edit
           </Link>
-          <button className="ui black bacic button">Delete</button>
+          <Link
+            to={`streams/delete/${stream.id}`}
+            className="ui black secondary button"
+          >
+            Delete
+          </Link>
         </div>
       );
     }
@@ -29,7 +34,11 @@ class StreamList extends Component {
       return (
         <div className="ui segment" key={stream.id}>
           <i className="large middle aligned icon camera" />
-          <h3 className="ui left floated header">{stream.title}</h3>
+          <h3 className="ui left floated header">
+            <Link to={`/streams/${stream.id}`} style={{ color: "black" }}>
+              {stream.title}
+            </Link>
+          </h3>
           {this.renderAdminControls(stream)}
           <div className="ui clearing divider"></div>
           <p>{stream.description}</p>
