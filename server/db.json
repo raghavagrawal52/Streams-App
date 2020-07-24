@@ -1,15 +1,35 @@
 {
   "streams": [
     {
-      "title": "My Stream",
+      "title": "Let' Code",
       "description": "This is a great stream.",
       "id": 1
     },
     {
-      "title": "Raghav ",
-      "description": "this is mine !",
+      "title": "Fortnite",
+      "description": "Let's play some fortnite",
+      "id": 2
+    },
+    {
+      "title": "My Stream",
+      "description": "This is my stream",
       "userId": "101883372017592408508",
+      "id": 3
+    },
+    {
+      "title": "Apex Legends",
+      "description": "This is a great stream.",
+      "id": 4
+    },
+    {
+      "title": "Python Bootcamp",
+      "description": "This is a great stream.",
       "id": 5
+    },
+    {
+      "title": "Let' Play",
+      "description": "This is a great stream.",
+      "id": 6
     }
   ]
 }

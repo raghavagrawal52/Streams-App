@@ -1,6 +1,6 @@
-const NodeMediaServer = require("node-media-server");
+const NodeMedia = require('node-media-server');
 
-const config = {
+const configuration = {
   rtmp: {
     port: 1935,
     chunk_size: 60000,
@@ -10,9 +10,9 @@ const config = {
   },
   http: {
     port: 8000,
-    allow_origin: "*",
+    allow_origin: '*',
   },
 };
 
-var nms = new NodeMediaServer(config);
-nms.run();
+var server = new NodeMedia(configuration);
+server.run();

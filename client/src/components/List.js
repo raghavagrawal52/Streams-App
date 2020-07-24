@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { fetchStreams } from "../../actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchStreams } from '../../actions';
 
-class StreamList extends Component {
+class List extends Component {
   componentDidMount() {
     this.props.fetchStreams();
   }
 
-  renderAdminControls(stream) {
+  renderUserAccess(stream) {
     if (this.props.currentUserId === stream.userId) {
       return (
         <div className="ui right floated header">
@@ -35,11 +35,11 @@ class StreamList extends Component {
         <div className="ui segment" key={stream.id}>
           <i className="large middle aligned icon camera" />
           <h3 className="ui left floated header">
-            <Link to={`/streams/${stream.id}`} style={{ color: "black" }}>
+            <Link to={`/streams/${stream.id}`} style={{ color: 'black' }}>
               {stream.title}
             </Link>
           </h3>
-          {this.renderAdminControls(stream)}
+          {this.renderUserAccess(stream)}
           <div className="ui clearing divider"></div>
           <p>{stream.description}</p>
         </div>
@@ -50,7 +50,7 @@ class StreamList extends Component {
   renderCreate() {
     if (this.props.isSignedIn) {
       return (
-        <div style={{ textAlign: "right" }}>
+        <div style={{ textAlign: 'right' }}>
           <Link to="/streams/new" className="ui black secondary button">
             Create Stream
           </Link>
@@ -80,4 +80,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchStreams })(List);

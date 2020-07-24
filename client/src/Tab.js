@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const Modal = (props) => {
+const Tab = (props) => {
   return ReactDOM.createPortal(
     <div onClick={props.onDismiss} className="ui dimmer modals visible active">
       <div
@@ -13,7 +13,7 @@ const Modal = (props) => {
         <div className="actions">{props.actions}</div>
       </div>
     </div>,
-    document.querySelector("#modal")
+    document.querySelector('#modal')
   );
 };
 
